@@ -1,0 +1,30 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "module"
+    },
+    "env": { "es6": true, "node": true },
+    "extends": ["sidvind/es2017", "prettier"],
+    "overrides": [
+        {
+            "files": ["src/*.js"],
+            "rules": {
+                "no-unused-vars": "off"
+            }
+        },
+        {
+            "files": ["**/*.spec.js"],
+            "extends": ["sidvind/es2017", "prettier"],
+            "env": {
+                "es6": true,
+                "jest": true
+            }
+        },
+        {
+            "files": "generateMockFile.js",
+            "rules": {
+                "no-console": "off"
+            }
+        }
+    ]
+}

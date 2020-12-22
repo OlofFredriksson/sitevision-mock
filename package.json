@@ -1,0 +1,67 @@
+{
+  "name": "sitevision-mock",
+  "version": "0.0.0",
+  "description": "Mock For Sitevision Webapps / Restapps",
+  "keywords": [
+    "sitevision",
+    "mock",
+    "webapps",
+    "restapps"
+  ],
+  "homepage": "https://github.com/OlofFredriksson/sitevision-mock#readme",
+  "bugs": {
+    "url": "https://github.com/OlofFredriksson/sitevision-mock/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlofFredriksson/sitevision-mock.git"
+  },
+  "license": "MIT",
+  "author": "Olof",
+  "main": "mock.json",
+  "files": [
+    "dist",
+    "mock.json"
+  ],
+  "scripts": {
+    "build": "run-s build:compile build:mockFile",
+    "build:compile": "rimraf dist && babel src --out-dir dist --ignore 'src/**/*.spec.js'",
+    "build:mockFile": "node generateMockFile.js",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint . --fix",
+    "lint": "run-s eslint prettier:check",
+    "lint:fix": "run-s eslint:fix prettier:write",
+    "prettier:check": "prettier . --check",
+    "prettier:write": "prettier . --write",
+    "test": "jest",
+    "postversion": "git push --follow-tags"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.{js,json,md,css}": "prettier --write",
+    "package.json": "npx sort-package-json -c"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-config-sidvind": "^1.3.2",
+    "eslint-plugin-jest": "^24.1.3",
+    "fs-extra": "^9.0.1",
+    "glob": "^7.1.6",
+    "husky": "^4.3.6",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2"
+  }
+}
