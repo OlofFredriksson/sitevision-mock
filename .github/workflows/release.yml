@@ -17,10 +17,12 @@ jobs:
                   registry-url: "https://registry.npmjs.org"
             - run: npm ci
             - run: npm run build
-            - run: git config --local user.email "action@github.com"
-            - run: git config --local user.name "GitHub Action"
-            - run: npm version "${{ github.event.inputs.version }}"
-            - run: npm publish
+            - name: Release
+              run: |
+                  git config --local user.email "action@github.com"
+                  git config --local user.name "GitHub Action"
+                  npm version "${{ github.event.inputs.version }}"
+                  npm publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
