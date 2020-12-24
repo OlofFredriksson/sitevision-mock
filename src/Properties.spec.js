@@ -1,13 +1,13 @@
-import { get } from "./Properties";
+import properties from "./Properties";
 
 describe("get", () => {
     test("should return undefined when missing ID", () => {
-        expect(get({})).toEqual(undefined);
-        expect(get(null)).toEqual(undefined);
-        expect(get(undefined)).toEqual(undefined);
+        expect(properties.get({})).toEqual(undefined);
+        expect(properties.get(null)).toEqual(undefined);
+        expect(properties.get(undefined)).toEqual(undefined);
     });
     test("with ID", () => {
         const node = { uuid: "id" };
-        expect(get(node)).toEqual("id");
+        expect(properties.get(node)).toEqual("id");
     });
 });

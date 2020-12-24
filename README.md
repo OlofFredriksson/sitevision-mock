@@ -7,7 +7,7 @@
 
 ## Prerequisites
 
-Your Module Server Javascript code to be written in ES6-format in order to use this mock, see more here how to get started:
+Your Module Server Javascript code must be written in ES6-format in order to use this mock, see more here how to get started:
 https://github.com/OlofFredriksson/babel-plugin-transform-sitevision-apps
 
 ## Getting started
@@ -21,7 +21,7 @@ In your `jest.config.js`, add following:
 ```javascript
 {
   "moduleNameMapper": {
-      require("./node_modules/sitevision-mock/mock.json")
+      ...require("sitevision-mock")
   }
 }
 ```
@@ -31,8 +31,8 @@ In your `jest.config.js`, add following:
 ```javascript
 {
   "moduleNameMapper": {
-      "appData":"./node_modules/sitevision-mock/dist/appData.js",
-      "globalAppData":"./node_modules/sitevision-mock/dist/globalAppData.js"
+      "appData":"<rootDir>/node_modules/sitevision-mock/dist/appData.js",
+      "globalAppData":"<rootDir>/node_modules/sitevision-mock/dist/globalAppData.js"
   }
 }
 ```
@@ -46,9 +46,10 @@ The functions is already compiled to ES2015 with Babel during build so you dont 
 This project is in an early / **experimental** phase, but since this is files only used during local development, i dont see any risk using them in your project.
 
 TODO:
-1: Add empty template files for each of the Sitevision api's and utils (at least the most imporant ones ;))
-1.1: Write a **README** with examples how to getting started.
-2: Implement mock functions for the most common use cases so you dont need to manual do it in your test cases.
+
+-   1: Add empty template files for each of the Sitevision api's and utils (at least the most imporant ones ;))
+-   1.1: Write a **README** with examples how to getting started.
+-   2: Implement mock functions for the most common use cases so you dont need to manual do it in your test cases.
 
 ## Why using this?
 

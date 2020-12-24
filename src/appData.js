@@ -1,9 +1,11 @@
-// returns the JCR Node
-export function getNode() {
-    return undefined;
-}
+export default class appData {
+    // returns the JCR Node
+    static getNode() {
+        return undefined;
+    }
 
-// returns the JCR Node identifier
-export function get(nodeName) {
-    return undefined;
+    // returns the JCR Node identifier
+    static get(nodeName) {
+        return undefined;
+    }
 }

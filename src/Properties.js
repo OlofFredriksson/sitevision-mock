@@ -1,3 +1,5 @@
-export function get(node) {
-    return node ? node.uuid : undefined;
+export default class Properties {
+    static get(node) {
+        return node ? node.uuid : undefined;
+    }
 }
