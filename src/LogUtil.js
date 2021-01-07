@@ -15,4 +15,12 @@ export default class LogUtil {
     static trace(text) {
         return undefined;
     }
+
+    static debug(text) {
+        return undefined;
+    }
+
+    static info(text) {
+        return undefined;
+    }
 }
