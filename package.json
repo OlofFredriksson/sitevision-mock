@@ -18,10 +18,9 @@
   },
   "license": "MIT",
   "author": "Olof",
-  "main": "mock.json",
+  "main": "dist/mock.json",
   "files": [
-    "dist",
-    "mock.json"
+    "dist"
   ],
   "scripts": {
     "build": "run-s build:compile build:mockFile",
