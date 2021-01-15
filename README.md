@@ -43,7 +43,7 @@ The functions is already compiled to ES2015 with Babel during build so you dont 
 
 ## Roadmap
 
-This project is in an early / **experimental** phase, but since this is files only used during local development, i dont see any risk using them in your project.
+This project is in an early / **experimental** phase, but since this is files only used during local development, i dont see any risk using them in your project. It is recommended to lock the version since breaking changes could happen.
 
 TODO:
 
@@ -55,7 +55,14 @@ TODO:
 
 If you write unit tests with Jest, you should be able to focus on writing tests on the functions and logic in your code, not spend time on writing mock functions that you should just ignore.
 
+Imported classes will get wrapped in a jest object, so you can mock the return value or check if functions have been called.
+
 Without this plugin, you could use [virtual mocks with jest](https://jestjs.io/docs/en/jest-object) to define the files.
+
+## References Sitevision API
+
+-   https://developer.sitevision.se/webdav/files/apidocs/overview-summary.html
+-   https://developer.sitevision.se/docs/webapps
 
 ## Notice
 
