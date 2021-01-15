@@ -6,7 +6,7 @@ const mockFile = {};
 
 glob.sync("dist/mock/**/*.js", { nodir: true }).forEach((filePath) => {
     const name = path.basename(filePath, ".js");
-    mockFile[name] = `<rootDir>/node_modules/${pkg.name}/${filePath}`;
+    mockFile[`^${name}$`] = `<rootDir>/node_modules/${pkg.name}/${filePath}`;
 });
 
 fs.writeJSONSync("dist/mock.json", mockFile);
