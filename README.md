@@ -41,6 +41,10 @@ In your `jest.config.js`, add following:
 
 The functions is already compiled to ES2015 with Babel during build so you dont need to add them in `transformIgnorePatterns`.
 
+## Limits
+
+-   Dont use `jest.mock("Sitevision Class")` since the objects is already jest mocks.
+
 ## Roadmap
 
 This project is in an early / **experimental** phase, but since this is files only used during local development, i dont see any risk using them in your project. It is recommended to lock the version since breaking changes could happen.
