@@ -1,7 +1,9 @@
 // https://developer.sitevision.se/webdav/files/apidocs/senselogic/sitevision/api/property/PropertyUtil.html
-export default class PropertyUtil {
+import { generateMock } from "../utils";
+
+export default generateMock({
     // Gets a Node property from a Node.s
-    static getNode(node, property) {
+    getNode: function (node, property) {
         return node[property];
-    }
-}
+    },
+});
