@@ -6,8 +6,8 @@ export default generateMock({
         this.data = data;
     },
 
-    getNode: function () {
-        return undefined;
+    getNode: function (key) {
+        return this.data[key] ? this.data[key] : undefined;
     },
     /*
         appData is missing api doc so using Properties.get.

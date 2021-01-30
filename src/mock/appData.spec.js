@@ -51,3 +51,19 @@ describe("get", () => {
         });
     });
 });
+describe("getNode", () => {
+    test("should return undefined when missing ID", () => {
+        expect(appData.getNode("404")).toEqual(undefined);
+        expect(appData.getNode(null)).toEqual(undefined);
+        expect(appData.getNode(undefined)).toEqual(undefined);
+    });
+
+    test("should get object if key exists", () => {
+        expect(appData.getNode("foo")).toEqual({
+            URI: "uri",
+            URL: "/url",
+            displayName: "a displayname",
+            uuid: "1.2.3",
+        });
+    });
+});
