@@ -17,7 +17,7 @@ export default generateMock({
         if (this.data[args[0]]) {
             const obj = this.data[args[0]];
             if (args.length === 1) {
-                return obj.uuid;
+                return obj.uuid ? obj.uuid : obj;
             }
             if (args.length === 2) {
                 return obj[args[1]];

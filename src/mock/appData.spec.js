@@ -13,6 +13,7 @@ beforeAll(() => {
                 key: "value",
             },
         },
+        aTextField: "A textfield value",
     });
 });
 afterEach(() => {
@@ -30,7 +31,10 @@ describe("get", () => {
 
     test("should get uuid from object when using one parameter", () => {
         expect(appData.get("foo")).toEqual("1.2.3");
-        expect(appData.get("subObject")).toEqual(undefined);
+    });
+
+    test("should get the whole object when using one parameter and uuid is missing (i.e Sitevision text field)", () => {
+        expect(appData.get("aTextField")).toEqual("A textfield value");
     });
 
     test("should get value from object when using two parameters", () => {
