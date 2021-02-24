@@ -1,12 +1,18 @@
 const fs = require("fs-extra");
-const pkg = require("./package.json");
 const path = require("path");
 const glob = require("glob");
-const mockFile = {};
+let mock = "";
 
-glob.sync("dist/mock/**/*.js", { nodir: true }).forEach((filePath) => {
+glob.sync("mock/**/*.js", { nodir: true, cwd: "dist" }).forEach((filePath) => {
     const name = path.basename(filePath, ".js");
-    mockFile[`^${name}$`] = `<rootDir>/node_modules/${pkg.name}/${filePath}`;
+    mock = `${mock}"^${name}$": path.join(__dirname, "${filePath}"),`;
 });
+mock = mock.slice(0, -1); // Remove last comma
 
-fs.writeJSONSync("dist/mock.json", mockFile);
+const fileContent = `
+var path = require("path");
+module.exports={
+    ${mock}
+};`;
+
+fs.writeFileSync("dist/mock.js", fileContent);

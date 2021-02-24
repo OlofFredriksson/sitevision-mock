@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "author": "Olof",
-  "main": "dist/mock.json",
+  "main": "dist/mock.js",
   "files": [
     "dist"
   ],
