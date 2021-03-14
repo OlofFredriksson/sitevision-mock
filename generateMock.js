@@ -1,6 +1,8 @@
 const fs = require("fs-extra");
 const path = require("path");
 const glob = require("glob");
+const UglifyJS = require("uglify-js");
+
 let mock = "";
 
 glob.sync("mock/**/*.js", { nodir: true, cwd: "dist" }).forEach((filePath) => {
@@ -16,3 +18,9 @@ module.exports={
 };`;
 
 fs.writeFileSync("dist/mock.js", fileContent);
+
+/* Minify */
+glob.sync("dist/**/*.js", { nodir: true }).forEach((filePath) => {
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+    fs.writeFileSync(filePath, UglifyJS.minify(fileContent).code, "utf-8");
+});
