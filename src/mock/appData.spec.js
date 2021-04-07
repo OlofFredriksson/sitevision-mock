@@ -13,6 +13,7 @@ beforeAll(() => {
                 key: "value",
             },
         },
+        pages: ["foo", "bar"],
         aTextField: "A textfield value",
     });
 });
@@ -65,5 +66,21 @@ describe("getNode", () => {
             displayName: "a displayname",
             uuid: "1.2.3",
         });
+    });
+});
+
+describe("getArray", () => {
+    test("should return undefined when missing ID", () => {
+        expect(appData.getArray("404")).toEqual(undefined);
+        expect(appData.getArray(null)).toEqual(undefined);
+        expect(appData.getArray(undefined)).toEqual(undefined);
+    });
+
+    test("should get value directly if it is an array", () => {
+        expect(appData.getArray("pages")).toEqual(["foo", "bar"]);
+    });
+
+    test("should transform value if not an array", () => {
+        expect(appData.getArray("aTextField")).toEqual(["A textfield value"]);
     });
 });

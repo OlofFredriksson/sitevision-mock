@@ -31,5 +31,11 @@ export default generateMock({
 
         return undefined;
     },
-    getArray: function () {},
+    getArray: function (key) {
+        const data = this.data[key];
+        if (data) {
+            return Array.isArray(data) ? data : [data];
+        }
+        return undefined;
+    },
 });
