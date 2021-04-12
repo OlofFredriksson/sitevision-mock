@@ -1,11 +1,6 @@
 import { generateMock } from "../utils";
 
 export default generateMock({
-    data: {},
-    __setMockData: function (data) {
-        this.data = data;
-    },
-
     getNode: function (key) {
         return this.data[key] ? this.data[key] : undefined;
     },

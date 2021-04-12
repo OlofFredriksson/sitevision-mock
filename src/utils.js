@@ -8,7 +8,12 @@ const getMethods = (myObj) => {
 };
 
 export function generateMock(svObject) {
-    const mock = {};
+    const mock = {
+        data: {},
+        __setMockData: function (data) {
+            this.data = data;
+        },
+    };
     getMethods(svObject).forEach((classFunction) => {
         mock[classFunction] = jest.fn(svObject[classFunction]);
     });

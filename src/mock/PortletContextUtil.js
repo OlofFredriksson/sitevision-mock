@@ -2,6 +2,6 @@
 import { generateMock } from "../utils";
 export default generateMock({
     getCurrentPage: function () {
-        return undefined;
+        return this.data.getCurrentPage ? this.data.getCurrentPage : null;
     },
 });
