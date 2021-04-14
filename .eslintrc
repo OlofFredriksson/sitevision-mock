@@ -4,11 +4,11 @@
         "sourceType": "module"
     },
     "env": { "es6": true, "node": true },
-    "extends": ["sidvind/es2017", "prettier"],
+    "extends": ["sidvind/es2018", "prettier"],
     "overrides": [
         {
             "files": ["**/*.spec.js"],
-            "extends": ["sidvind/es2017", "prettier"],
+            "extends": ["sidvind/es2018", "prettier"],
             "env": {
                 "es6": true,
                 "jest": true
