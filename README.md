@@ -26,6 +26,10 @@ In your `jest.config.js`, add following:
 }
 ```
 
+### Examples
+
+See test files in `integration/` folder for some inspiration how to write your own tests.
+
 ### Load specific
 
 ```javascript

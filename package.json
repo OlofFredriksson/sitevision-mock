@@ -30,7 +30,9 @@
     "lint:fix": "run-s eslint:fix prettier:write",
     "prettier:check": "prettier . --check",
     "prettier:write": "prettier . --write",
-    "test": "jest",
+    "test": "run-s test:unit test:integration",
+    "test:unit": "jest",
+    "test:integration": "jest --config integration/jest.config.js",
     "postversion": "git push --follow-tags"
   },
   "husky": {
