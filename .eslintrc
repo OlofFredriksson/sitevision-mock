@@ -1,14 +1,13 @@
 {
     "parserOptions": {
-        "ecmaVersion": 2017,
+        "ecmaVersion": 2018,
         "sourceType": "module"
     },
     "env": { "es6": true, "node": true },
-    "extends": ["sidvind/es2018", "prettier"],
+    "extends": ["sidvind/es2017", "prettier"],
     "overrides": [
         {
             "files": ["**/*.spec.js"],
-            "extends": ["sidvind/es2018", "prettier"],
             "env": {
                 "es6": true,
                 "jest": true
