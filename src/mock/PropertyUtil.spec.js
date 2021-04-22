@@ -20,6 +20,7 @@ describe("PropertyUtil", () => {
             "getBoolean",
             "getCalendar",
             "getInt",
+            "getStrings",
             "getStringEscaped",
         ];
 

@@ -11,6 +11,7 @@ export default generateMock({
     getBoolean: getProperty,
     getCalendar: getProperty,
     getInt: getProperty,
+    getStrings: getProperty,
     getStringEscaped: getProperty,
     getNestedString: getNestedProperty,
     getNestedBinary: getNestedProperty,
