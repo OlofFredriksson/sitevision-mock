@@ -26,10 +26,6 @@ In your `jest.config.js`, add following:
 }
 ```
 
-### Examples
-
-See test files in `integration/` folder for some inspiration how to write your own tests.
-
 ### Load specific
 
 ```javascript
@@ -44,6 +40,21 @@ See test files in `integration/` folder for some inspiration how to write your o
 ---
 
 The functions is already compiled to ES2015 with Babel during build so you dont need to add them in `transformIgnorePatterns`.
+
+## Transformers
+
+The Sitevision API sometimes returns Java Objects, List & Calendar for example. This repo also contains transformers which could help you adding mock data.
+
+Helpfull to use if you need to mock PropertyUtil values.
+
+```Javascript
+// Your Test file
+import List from "sitevision-mock/transformers/List";
+...
+const node = {
+  yourProperty: new List([1, 2, 3]),
+};
+```
 
 ## Limits
 

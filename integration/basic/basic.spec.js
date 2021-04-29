@@ -1,6 +1,11 @@
-import { add, getPropertyFromCurrentPage } from "./basic";
+import {
+    add,
+    getDummyStringsInJavaList,
+    getPropertyFromCurrentPage,
+} from "./basic";
 import logUtil from "LogUtil";
 import portletContextUtil from "PortletContextUtil";
+import List from "../../dist/transformers/List";
 
 beforeEach(() => {
     jest.clearAllMocks();
@@ -20,4 +25,13 @@ test("getPropertyFromCurrentPage", () => {
     });
     const myUri = getPropertyFromCurrentPage("URI");
     expect(myUri).toEqual("/URI");
+});
+
+test("getDummyStringsInJavaList", () => {
+    const node = {
+        strings: new List([1, 2, 3]),
+    };
+
+    const strings = getDummyStringsInJavaList(node);
+    expect(strings.size()).toEqual(3);
 });
