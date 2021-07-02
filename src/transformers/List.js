@@ -20,4 +20,8 @@ export default class List {
         this.arr = [];
         return true;
     }
+
+    isEmpty() {
+        return !this.arr || this.arr.length < 1;
+    }
 }

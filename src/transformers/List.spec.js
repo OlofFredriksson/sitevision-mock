@@ -18,4 +18,18 @@ describe("List", () => {
         list.clear();
         expect(list.size()).toEqual(0);
     });
+
+    test("should not be empty", () => {
+        expect(list.isEmpty()).toEqual(false);
+    });
+
+    test("should be empty after list is cleared", () => {
+        list.clear();
+        expect(list.isEmpty()).toEqual(true);
+    });
+
+    test("should be empty on empty list", () => {
+        const anotherList = new List();
+        expect(anotherList.isEmpty()).toEqual(true);
+    });
 });
