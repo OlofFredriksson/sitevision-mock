@@ -24,7 +24,7 @@
   ],
   "scripts": {
     "build": "node generateMock.js",
-    "eslint": "eslint .",
+    "eslint": "eslint . --max-warnings=0",
     "eslint:fix": "eslint . --fix",
     "lint": "run-s eslint prettier:check",
     "lint:fix": "run-s eslint:fix prettier:write",

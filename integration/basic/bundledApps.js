@@ -1,11 +1,8 @@
-import PropertyUtil from "@sitevision/api/server/PropertyUtil";
-import Properties from "@sitevision/api/server/Properties";
-
 /* Just some dummy functions.. */
-import properties from "Properties";
 import logUtil from "LogUtil";
 import portletContextUtil from "PortletContextUtil";
-import propertyUtil from "PropertyUtil";
+import propertyUtil from "@sitevision/api/server/PropertyUtil";
+import properties from "@sitevision/api/server/Properties";
 
 export function getPropertyFromCurrentPage(prop) {
     return properties.get(portletContextUtil.getCurrentPage(), prop);
