@@ -24,7 +24,7 @@ glob.sync("**/*.js", {
 
 glob.sync("mock/**/*.js", { nodir: true, cwd: "dist" }).forEach((filePath) => {
     const name = path.basename(filePath, ".js");
-    mock = `${mock}"^${name}$": path.join(__dirname, "${filePath}"),`;
+    mock = `${mock}"^(@sitevision/api/(server|client|common)/)?${name}$": path.join(__dirname, "${filePath}"),`;
 });
 mock = mock.slice(0, -1); // Remove last comma
 

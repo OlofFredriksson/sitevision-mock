@@ -7,8 +7,13 @@
 
 ## Prerequisites
 
-Your Module Server Javascript code must be written in ES6-format in order to use this mock, see more here how to get started:
-https://github.com/OlofFredriksson/babel-plugin-transform-sitevision-apps
+**Only applies if you are building the applications in the old / legacy way**
+
+-   Your Module Server Javascript code must be written in ES6-format in order to use this mock, see more here how to get started:
+    https://github.com/OlofFredriksson/babel-plugin-transform-sitevision-apps
+
+More information regarding the "bundled app" concept, please read on the following link:
+https://developer.sitevision.se/archives/developer-news/developer-news/2021-06-10-bundled-apps
 
 ## Getting started
 
@@ -49,7 +54,7 @@ Helpfull to use if you need to mock PropertyUtil values.
 
 ```Javascript
 // Your Test file
-import List from "sitevision-mock/transformers/List";
+import List from "sitevision-mock/dist/transformers/List";
 ...
 const node = {
   yourProperty: new List([1, 2, 3]),
