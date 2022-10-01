@@ -1,6 +1,6 @@
 # sitevision-mock
 
-> Jest mock for Sitevision Webapps / Restapps (Server side Javascript)
+> Jest mock for Sitevision Webapps / Restapps (Server side Javascript). Works with both Webapps 1 and 2.
 
 [![Build](https://github.com/OlofFredriksson/sitevision-mock/workflows/Build/badge.svg)](https://github.com/OlofFredriksson/sitevision-mock/actions)
 [![npm](https://img.shields.io/npm/v/sitevision-mock)](https://www.npmjs.com/package/sitevision-mock)
@@ -31,26 +31,15 @@ In your `jest.config.js`, add following:
 }
 ```
 
-### Load specific
+## Examples
 
-```javascript
-{
-  "moduleNameMapper": {
-      "appData":"<rootDir>/node_modules/sitevision-mock/dist/appData.js",
-      "globalAppData":"<rootDir>/node_modules/sitevision-mock/dist/globalAppData.js"
-  }
-}
-```
-
----
-
-The functions is already compiled to ES2015 with Babel during build so you dont need to add them in `transformIgnorePatterns`.
+See the tests in **integration/** if you need some inspiration how to write test cases with this mock.
 
 ## Transformers
 
 The Sitevision API sometimes returns Java Objects, List & Calendar for example. This repo also contains transformers which could help you adding mock data.
 
-Helpfull to use if you need to mock PropertyUtil values.
+Helpfull to use if you for example need to mock PropertyUtil values.
 
 ```Javascript
 // Your Test file
@@ -64,16 +53,6 @@ const node = {
 ## Limits
 
 -   Dont use `jest.mock("Sitevision Class")` since the objects is already jest mocks.
-
-## Roadmap
-
-This project is in an early / **experimental** phase, but since this is files only used during local development, i dont see any risk using them in your project. It is recommended to lock the version since breaking changes could happen.
-
-TODO:
-
--   1: Add empty template files for each of the Sitevision api's and utils (at least the most imporant ones ;))
--   1.1: Write a **README** with examples how to getting started.
--   2: Implement mock functions for the most common use cases so you dont need to manual do it in your test cases.
 
 ## Why using this?
 
