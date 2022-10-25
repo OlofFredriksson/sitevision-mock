@@ -22,7 +22,7 @@ describe("getNodeByIdentifier", () => {
         );
         expect(resourceLocatorUtil.getNodeByIdentifier("myNode"))
             .toMatchInlineSnapshot(`
-            Object {
+            {
               "URI": "uri",
               "URL": "/url",
               "displayName": "a displayname",
