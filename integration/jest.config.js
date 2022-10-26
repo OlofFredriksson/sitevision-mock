@@ -1,4 +1,3 @@
-const path = require("path");
 module.exports = {
     collectCoverage: true,
     collectCoverageFrom: ["./**/*.js", "!**/coverage/**", "!**/jest.config.js"],
@@ -6,10 +5,5 @@ module.exports = {
     moduleNameMapper: {
         ...require("../dist/mock"),
     },
-    transform: {
-        "\\.js$": [
-            "babel-jest",
-            { configFile: path.join(__dirname, "../babel.config.js") },
-        ],
-    },
+    rootDir: "../",
 };
