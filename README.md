@@ -54,6 +54,30 @@ const node = {
 
 -   Dont use `jest.mock("Sitevision Class")` since the objects is already jest mocks.
 
+## Typescript
+
+sitevision-mock supports webapps written in Typescript. However, due to limitations with the Sitevision Typings file, you cant setMockData directly on the imported members. See workaround:
+
+**Working**
+
+```javascript
+import { setMockData } from "sitevision-mock/dist/setMockData";
+setMockData("PortletContextUtil", {
+    getCurrentPage: { key2: "/URI" },
+});
+```
+
+**Not Working**
+
+```javascript
+import portletContextUtil from "PortletContextUtil";
+portletContextUtil.__setMockData({
+    getCurrentPage: { key1: "/URI" },
+});
+```
+
+If you use Javascript both ways work.
+
 ## Why using this?
 
 If you write unit tests with Jest, you should be able to focus on writing tests on the functions and logic in your code, not spend time on writing mock functions that you should just ignore.

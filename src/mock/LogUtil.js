@@ -1,7 +1,7 @@
 /* No need to print out anything in the test cases */
 import { generateMock } from "../utils";
 
-export default generateMock({
+export default generateMock("LogUtil", {
     log: function () {
         return undefined;
     },

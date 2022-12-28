@@ -1,16 +1,16 @@
 import { generateMock } from "../utils";
 
-export default generateMock({
+export default generateMock("appData", {
     getNode: function (key) {
-        return this.data[key] ? this.data[key] : undefined;
+        return this.data()[key] ? this.data()[key] : undefined;
     },
     /*
         appData is missing api doc so using Properties.get.
         https://developer.sitevision.se/webdav/files/apidocs/senselogic/sitevision/api/property/Properties.html
     */
     get: function (...args) {
-        if (this.data[args[0]]) {
-            const obj = this.data[args[0]];
+        if (this.data()[args[0]]) {
+            const obj = this.data()[args[0]];
             if (args.length === 1) {
                 return obj.uuid ? obj.uuid : obj;
             }
@@ -27,7 +27,7 @@ export default generateMock({
         return undefined;
     },
     getArray: function (key) {
-        const data = this.data[key];
+        const data = this.data()[key];
         if (data) {
             return Array.isArray(data) ? data : [data];
         }

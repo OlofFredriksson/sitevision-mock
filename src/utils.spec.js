@@ -3,7 +3,7 @@ import { generateMock } from "./utils";
 let mock;
 describe("generateMock", () => {
     beforeEach(() => {
-        mock = generateMock({
+        mock = generateMock("testFile", {
             function1: function () {
                 return "A string";
             },

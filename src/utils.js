@@ -1,3 +1,6 @@
+const path = require("path");
+import { getMockData, setMockData } from "./setMockData";
+
 /* global jest */
 const getMethods = (myObj) => {
     const keysInObj = Object.keys(myObj);
@@ -7,11 +10,12 @@ const getMethods = (myObj) => {
     return functionsInObj;
 };
 
-export function generateMock(svObject) {
+export function generateMock(fileName, svObject) {
+    const name = path.parse(fileName).name;
     const mock = {
-        data: {},
+        data: () => getMockData(name),
         __setMockData: function (data) {
-            this.data = data;
+            setMockData(name, data);
         },
     };
     getMethods(svObject).forEach((classFunction) => {

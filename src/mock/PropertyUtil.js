@@ -5,7 +5,7 @@ import { generateMock } from "../utils";
  Functions wont transform return value to correct type,
  it is up to consumer to define correct values
 */
-export default generateMock({
+export default generateMock(__filename, {
     getNode: getProperty,
     getString: getProperty,
     getBoolean: getProperty,

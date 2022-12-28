@@ -1,7 +1,7 @@
 // https://developer.sitevision.se/webdav/files/apidocs/senselogic/sitevision/api/property/Properties.html
 import { generateMock } from "../utils";
 
-export default generateMock({
+export default generateMock("Properties", {
     get: function (...args) {
         if (args.length === 1 && args[0]) {
             const node = args[0];

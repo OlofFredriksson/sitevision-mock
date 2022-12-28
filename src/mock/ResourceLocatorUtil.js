@@ -1,6 +1,6 @@
 import { generateMock } from "../utils";
-export default generateMock({
+export default generateMock("ResouceLocatorUtil", {
     getNodeByIdentifier: function (id) {
-        return this.data[id] ? this.data[id] : null;
+        return this.data()[id] ? this.data()[id] : null;
     },
 });

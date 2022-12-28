@@ -1,6 +1,6 @@
 import { generateMock } from "../utils";
 
-export default generateMock({
+export default generateMock(__filename, {
     get: function () {
         return undefined;
     },
