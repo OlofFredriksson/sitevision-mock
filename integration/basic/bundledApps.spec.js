@@ -6,7 +6,7 @@ import {
 import portletContextUtil from "@sitevision/api/server/PortletContextUtil";
 import logUtil from "@sitevision/api/server/LogUtil";
 
-import List from "../../dist/transformers/List";
+import List from "sitevision-mock/dist/transformers/List";
 
 beforeEach(() => {
     jest.clearAllMocks();

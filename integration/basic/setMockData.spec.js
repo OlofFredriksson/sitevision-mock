@@ -1,6 +1,6 @@
 import { getPropertyFromCurrentPage } from "./basic";
 import portletContextUtil from "PortletContextUtil";
-import { setMockData, clearMockData } from "../../dist/setMockData";
+import { setMockData, clearMockData } from "sitevision-mock/dist/setMockData";
 
 beforeEach(() => {
     jest.clearAllMocks();

@@ -4,6 +4,7 @@ module.exports = {
     collectCoverage: false,
     moduleNameMapper: {
         ...require("../dist/mock"),
+        "^sitevision-mock/(.+)$": "<rootDir>../$1",
     },
     transform: {
         "\\.js$": [
