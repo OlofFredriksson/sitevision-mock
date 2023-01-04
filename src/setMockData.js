@@ -9,9 +9,9 @@ export function getMockData(key) {
 }
 
 export function clearMockData(key = "") {
-    if (key && mockData[key]) {
-        mockData[key] = {};
-    } else {
-        mockData = {};
+    if (key) {
+        delete mockData[key];
+        return;
     }
+    mockData = {};
 }
