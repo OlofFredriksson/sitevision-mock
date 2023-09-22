@@ -54,6 +54,20 @@ const node = {
 
 -   Dont use `jest.mock("Sitevision Class")` since the objects is already jest mocks.
 
+## Mock Sitevision Node
+
+There is helper to generate a mocked Sitevision Node, with some of the properties and functions.
+
+```javascript
+import { mockNode } from "sitevision-mock/dist/mockNode";
+
+node = mockNode({
+    uuid: "myUUID",
+});
+
+node.getIdentifier(); // => myUUID
+```
+
 ## Typescript
 
 sitevision-mock supports webapps written in Typescript. However, due to limitations with the Sitevision Typings file, you cant setMockData directly on the imported members. See workaround:

@@ -2,13 +2,23 @@ import {
     add,
     getDummyStringsInJavaList,
     getPropertyFromCurrentPage,
+    getNodeId,
 } from "./basic";
 import logUtil from "LogUtil";
 import portletContextUtil from "PortletContextUtil";
 import List from "sitevision-mock/dist/transformers/List";
+import { mockNode } from "sitevision-mock/dist/mockNode";
 
+let node;
 beforeEach(() => {
     jest.clearAllMocks();
+    node = mockNode({
+        uuid: "myUUID",
+    });
+});
+
+test("fetch node id", () => {
+    expect(getNodeId(node)).toEqual("myUUID");
 });
 
 test("add should internally call logUtil", () => {
