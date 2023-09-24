@@ -17,6 +17,7 @@ export function mockNode(obj) {
     mockNode.getNode = (path) => mockNode[path];
     mockNode.getNodes = () => new Iterator(mockNode.nodes);
     mockNode.hasNodes = () => !!mockNode.nodes;
+    mockNode.setProperty = (property, value) => (mockNode[property] = value);
 
     return mockFunctions(mockNode);
 }

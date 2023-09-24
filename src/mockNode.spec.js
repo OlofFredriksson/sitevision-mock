@@ -36,4 +36,11 @@ describe("mockNode", () => {
         }
         expect(i).toEqual(2);
     });
+
+    it("setProperty", () => {
+        expect(node.foo).toBe(undefined);
+
+        node.setProperty("foo", "bar");
+        expect(node.foo).toBe("bar");
+    });
 });
