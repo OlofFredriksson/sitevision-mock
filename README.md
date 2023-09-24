@@ -50,10 +50,6 @@ const node = {
 };
 ```
 
-## Limits
-
--   Dont use `jest.mock("Sitevision Class")` since the objects is already jest mocks.
-
 ## Mock Sitevision Node
 
 There is helper to generate a mocked Sitevision Node, with some of the properties and functions.
@@ -92,13 +88,11 @@ portletContextUtil.__setMockData({
 
 If you use Javascript both ways work.
 
-## Why using this?
+## Why using Sitevision mock?
 
-If you write unit tests with Jest, you should be able to focus on writing tests on the functions and logic in your code, not spend time on writing mock functions that you should just ignore.
+If you write unit tests with Jest, you should be able to focus on writing tests on the functions and logic in your code, not spend time on writing mock functions for the Sitevision API.
 
 Imported classes will get wrapped in a jest object, so you can mock the return value or check if functions have been called.
-
-Without this plugin, you could use [virtual mocks with jest](https://jestjs.io/docs/en/jest-object) to define the files.
 
 ## References Sitevision API
 
