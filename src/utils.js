@@ -10,6 +10,13 @@ const getMethods = (myObj) => {
     return functionsInObj;
 };
 
+export function mockFunctions(svObject) {
+    getMethods(svObject).forEach((classFunction) => {
+        svObject[classFunction] = jest.fn(svObject[classFunction]);
+    });
+    return svObject;
+}
+
 export function generateMock(fileName, svObject) {
     const name = path.parse(fileName).name;
     const mock = {
@@ -18,8 +25,6 @@ export function generateMock(fileName, svObject) {
             setMockData(name, data);
         },
     };
-    getMethods(svObject).forEach((classFunction) => {
-        mock[classFunction] = jest.fn(svObject[classFunction]);
-    });
-    return mock;
+
+    return { ...mock, ...mockFunctions(svObject) };
 }
